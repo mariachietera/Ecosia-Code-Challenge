@@ -1,6 +1,6 @@
-###BI Analyst with Python Experience - Ecosia
+### BI Analyst with Python Experience - Ecosia
 
-####Requirements
+#### Requirements
 
 Create a Python program that does the following:
 
@@ -13,12 +13,12 @@ Create a Python program that does the following:
 7. Calculates entries for female and Californian users. ✔
 8. Provide location of .csv output file. ✔
 
-####Usage
+#### Usage
 ```
 > cd ecosia
 > ./ecosia
 ```
-####Output
+#### Output
 ```
 > Running...
 > =============
@@ -27,7 +27,7 @@ Create a Python program that does the following:
 ```
 
 
-###Implementation details
+### Implementation details
 
 The project has been written in Python 2.7.
 The script is articulated in 3 parts: loading of the json file from url, data processing, uploading the requested .csv file on s3.
@@ -43,14 +43,14 @@ Another simpler approach I could have followed would have been looping over the 
 
 Once aggregated the data as requested, I converted the query result in a .csv format string and uploaded that as the ```Body``` parameter of the ```boto3.client('s3').put_object()``` method.
 
-###External resources
+### External resources
 
 * ```json``` and ```urllib```: used to programmatically load the provided json file from url
 * ```sqlite3```: used to save the sessions data in a RAM based table and make aggregation and operations on entries easier
 * ```datetime.datetime```: used to shape the client_time in the *%Y-%m-%d* format.
 * ```boto3```: Amazon Web Services SDK allowing the uploading of the .csv to S3
 
-####Possible improvements
+#### Possible improvements
 
 * encode hard-coded parameters such as URL, BUCKET, REGION, KEY_NAME in a config file.
 * create a ```Data Access Object``` to encapsulate database communication
